@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-
+
+scale=1.0">
+    <title>Dashboard - ADM</title>
+    <link rel="stylesheet" href="../css/bootime.css">
+    <!-- <link rel="stylesheet" href="../css/navbar.css"> -->
+    <link rel="stylesheet" href="../css/dropdown.css">
+    <link rel="stylesheet" href="../css/chat.css">
+    <script src="../js/direcoes.js"></script>
+    <script src="../js/chat.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../Teste_chatbot/chatbot.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="../Teste_chatbot/chatbot.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<body onload="init()">
+    <div class="dash">
+        <div class="navbar_boot">
+            <div class="circle_back">
+                <button><img src="../assets/imgs_power/arrow.png" alt=""></button>
+            </div>
+
+            <div class="information_user">
+                <div class="info">
+                    <span id="nome">Nome Usuário</span>
+                    <span id="email">Email@gmail.com</span>
+                </div>
+                <img src="../assets/imgs_power/Telecommuting-pana.png" alt="">
+            </div>
+        </div>
+
+        <div class="upper_part">
+            <div class="info_machine">
+                <div class="picture">
+                    <img src="../assets/imgs_power/laptop-screen.png" alt="">
+                    <p>Nome da Máquina</p>
+                </div>
+                <div class="inform">
+                    <span>Código do Disco:</span>
+                    <p>00000</p>
+                    <span>Quantidade de APPs:</span>
+                    <p>00000</p>
+                </div>
+            </div>
+
+            <div class="boxes_inside">
+                <div id="card_employee">
+                    <h2>Status dos funcionários</h2>
+                    <div class="title">
+                        <h3>PID</h3>
+                        <h3>Nome</h3>
+                        <h3>Mem(%)</h3>
+                    </div>
+                    <div class="arrangement">
+                        <div class="infoemp">
+                            <p>001</p>
+                            <p>Armin Holland</p>
+                            <p>07/10/2023</p>
+                        </div>
+                        <div class="infoemp">
+                            <p>001</p>
+                            <p>Armin Holland</p>
+                            <p>07/10/2023</p>
+                        </div>
+                        <div class="infoemp">
+                            <p>001</p>
+                            <p>Armin Holland</p>
+                            <p>07/10/2023</p>
+                        </div>
+                        <div class="infoemp">
+                            <p>001</p>
+                            <p>Armin Holland</p>
+                            <p>07/10/2023</p>
+                        </div>
+                        <div class="infoemp">
+                            <p>001</p>
+                            <p>Armin Holland</p>
+                            <p>07/10/2023</p>
+                        </div>
+                        <div class="infoemp">
+                            <p>001</p>
+                            <p>Armin Holland</p>
+                            <p>07/10/2023</p>
+                        </div>
+                        <div class="infoemp">
+                            <p>001</p>
+                            <p>Armin Holland</p>
+                            <p>07/10/2023</p>
+                        </div>
+                        <div class="infoemp">
+                            <p>001</p>
+                            <p>Armin Holland</p>
+                            <p>07/10/2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info_machine2">
+                <div id="card_employee2">
+                    <h2>Alertas</h2>
+                    <div class="arrangement2">
+                        <div class="infoemp2">
+                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
+                        </div>
+                        <div class="infoemp2">
+                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
+                        </div>
+                        <div class="infoemp2">
+                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
+                        </div>
+                        <div class="infoemp2">
+                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
+                        </div>
+                        <div class="infoemp2">
+                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
+                        </div>
+                        <div class="infoemp2">
+                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
+                        </div>
+                        <div class="infoemp2">
+                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
+                        </div>
+                        <div class="infoemp2">
+                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="down_part">
+            <div class="chart">
+            </div>
+
+            <div class="taxes">
+                <div class="boxes_taxes">
+                    <h3>Tempo de Paralização:</h3>
+                    <div class="info_temp">
+                        <button class="prev-1 prev">
+                            < </button>
+                                <div class="tempo_fora">
+                                    <span id="date">Data: DIA/MES/ANO</span>
+                                    <span id="time">00:00:00:00</span>
+                                </div>
+                        <button class="firstNext next"> > </button>
+                    </div>
+                </div>
+
+                <div class="boxes_taxes2">
+                    <div class="part_info_bar">
+                        <div class="info_bar">
+                            <span>Uso de Disco</span>
+                            <span id="porcentage">56%</span>
+                        </div>
+                        <div class="chart_bar">
+                            <div class="barra">
+                                <div class="barra amarela"></div>
+                                <div class="barra cinza"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="boxes">
+        <button id="message" onclick="literate()"><img src="../assets/imgs_power/message_icon.ico" alt=""></button>
+        <div class="dropdown_lit" id="lit_dropdown">
+            <div id="main">
+                <h2>Chat de Ajuda</h2>
+                <div id="msg">
+                    <div id="robot">
+                        <div class="bot"></div>
+                        <h3>Agent</h3>
+                    </div>
+                </div>
+                <div class="input">
+                    <input type="text" id="msg_send" placeholder="New Message">
+                    <button class="send" id="reply">Mandar <i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+            <script src="chatbot.js"></script>
+            <button id="close3" onclick="clickclose3()"><b>x</b></button>
+        </div>
+        </p>
+    </div>
+    </div>
+    </div>
+    <script src="../Teste_chatbot/chatbot.js"></script>
+</body>
+
+</html>
+
+<script>
+    //global
+    menu_user.src = '../assets/imgs_power/menu_baixo.png'
+    var botao_icon2 = "../assets/imgs_power/menu_alto.png"
+    var contador = 0;
+
+    window.onload = buscarDiscos(1);
+
+    function troca_menu() {
+        contador += 1
+
+        if (contador > 0) {
+            if (contador == 1) {
+                menu_user.src = botao_icon2
+                funcoes.innerHTML = `<span class="sair">Sair</span>`
+
+            } else {
+                funcoes.innerHTML = ' ';
+                contador = 0
+                menu_user.src = '../assets/imgs_power/menu_baixo.png'
+            }
+        }
+    }
+
+    function troca2() {
+        contador += 1
+
+        if (contador > 0) {
+            if (contador == 1) {
+                menu_cpu.src = '../assets/imgs_power/menu_baixo.png'
+                menu_ram.style.display = ''
+                menu_ram.style = "border-top: 1px solid #FFE500;"
+                menu_ram.innerHTML = `<span onclick= "trocar_chart()">Uso de Ram</span>`
+
+            } else {
+                menu_ram.style = ''
+                menu_ram.innerHTML = ''
+                contador = 0
+                menu_cpu.src = '../assets/imgs_power/menu_alto.png'
+            }
+        }
+    }
+
+    function trocar_chart() {
+        //esse alert é um teste para ver se funcionou criar a function pelo script
+        alert('agora o gráfico será de uso de ram ')
+    }
+
+    function exibirgraph(valor) {
+
+        var grafico_RAM = document.getElementById("myChart_RAM")
+        var grafico_CPU = document.getElementById("myChart_CPU")
+
+        if (valor == 1) {
+
+            obterDadosGrafico_RAM(1)
+
+            grafico_CPU.style.display = "none";
+            grafico_RAM.style.display = "block";
+
+        } else if (valor == 2) {
+
+            obterDadosGrafico_CPU(1)
+
+            grafico_RAM.style.display = "none";
+            grafico_CPU.style.display = "block";
+
+        }
+    }
+
+    function buscarDiscos(FKMAQUINA) {
+
+        fetch(`/medidas/buscarDiscos/${FKMAQUINA}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+            var feed = document.getElementById("discos");
+            feed.innerHTML = "";
+
+            if (resposta.ok) {
+
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("discos");
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    var feed = document.getElementById("discos");
+                    feed.innerHTML = "";
+                    for (let contador_usuario = 0; contador_usuario < resposta.length; contador_usuario++) {
+                        var publicacao = resposta[contador_usuario];
+                        // criando e manipulando elementos do HTML via JavaScript
+
+                        var disco = document.createElement("span");
+                        disco.id = `disco${publicacao.IDMonitoramento}`;
+
+                        var label = document.createElement("span");
+                        label.innerHTML = `Disco ${contador_usuario + 1} - `;
+                        disco.appendChild(label);
+
+                        var porcentagem = document.createElement("span");
+                        porcentagem.id = `porcentage${publicacao.IDMonitoramento}`;
+                        porcentagem.innerHTML = `${publicacao.Uso_DIsco}`;
+                        disco.appendChild(porcentagem)
+
+                        feed.appendChild(disco)
+
+                    }
+                });
+            } else {
+                throw ("Houve um erro ao tentar realizar A pesquisa!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+
+        return false;
+    }  
+</script>

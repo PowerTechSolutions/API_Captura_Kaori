@@ -1,0 +1,70 @@
+.boxes {
+    border-radius: 35px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    display: flex;
+    z-index: 999;
+    position: fixed;
+    bottom: 23px;
+    right: 42px;
+}
+
+.boxes img {
+    width: 68px;
+    height: 69px;
+}
+
+.boxes #message {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: transparent;
+    border-color: transparent;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.dropdown_lit {
+    position: relative;
+    display: inline-block;
+    margin-left: 80px;
+    width: 50px;
+    z-index: 0;
+}
+
+#close3 {
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 478px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 999;
+    top: 0%;
+}
+
+.dropdown_lit {
+    display: none;
+    background-color: #1d1d20;
+    width: 514px;
+    height: 75vh;
+    border: #F7E11B solid 2px;
+    position: absolute;
+    right: -16px;
+    top: -454px;
+}
+
+.dropdown_lit b {
+    color: rgb(0, 0, 0);
+}
+
+.dropdown_lit span {
+    padding: 20px 10px 10px 10px;
+    font-size: 22px;
+    font-weight: 100;
+    text-align: center;
+    text-align: center;
+}
