@@ -1,0 +1,460 @@
+body{
+    background-color: black;
+    margin: 0%;
+}
+
+.dash{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.left_part{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 91vh;
+    width: 100%;
+}
+
+.navbar_boot{
+    display: flex;
+    flex-direction: row;
+    width: 99%;
+    height: 58px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar_boot span{
+    color: white;
+    font-family: 'Poppins';
+}
+
+#email{
+    color: rgb(119, 119, 119);
+    font-size: 13px;
+}
+
+.information_user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.information_user img{
+    width: 80px;
+    height: 50px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+}
+
+.circle_back img{
+    width: 64px;
+    height: 42px;
+}
+
+.circle_back button{
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin-left: 13px;
+}
+
+.upper_part{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* height: 239px; */
+    align-items: center;
+    justify-content: space-evenly;
+}
+.info_machine2{
+    background-color: #1D1D20;
+    display: flex;
+    flex-direction: row;
+    width: 96%;
+    height: 77%;
+    border-radius: 15px;
+    font-family: 'Poppins';
+    color: #ffffff;
+    margin-right: 37px;
+    margin-top: 7px;
+    align-items: center;
+}
+
+.informs span{
+    background-color: #272727;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#h4{
+    margin-top: 0%;
+}
+
+#card_employee2 {
+    border-radius: 20px;
+    width: 96%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 95%;
+}
+
+#card_employee2 h2 {
+    margin-bottom: 0%;
+    display: flex;
+    justify-content: left;
+    width: 90%;
+}
+
+.arrangement2 {
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    height: 59%;
+    overflow-y: scroll;
+    margin-bottom: 50px;
+}
+
+.infoemp2 {
+    width: 93.3%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    margin-left: 18px;
+}
+
+
+.picture{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.picture img{
+    width: 68%;
+}
+
+.picture p{
+    color: white;
+    font-family: 'Poppins';
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.inform{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 45%;
+    height: 100%;
+    justify-content: center;
+}
+
+.inform span{
+    font-family: 'Poppins';
+    font-size: 18px;
+}
+
+.inform p{
+    font-family: 'Poppins';
+    font-size: 15px;
+    background-color: #272727;
+    width: 94px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxes_inside{
+    font-family: 'Poppins';
+    color: #ffffff;
+    background-color: #1D1D20;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 35%;
+    border-radius: 15px;
+    align-items: center;
+}
+
+#card_employee {
+    border-radius: 20px;
+    width: 96%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 92%;
+}
+
+#card_employee h2 {
+    margin-bottom: 0%;
+    margin-top: 13px;
+    display: flex;
+    justify-content: left;
+    width: 90%;
+}
+
+.title {
+    margin: 0%;
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+}
+
+.title h3 {
+    font-weight: 300;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.arrangement {
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+    height: 49%;
+    overflow-y: scroll;
+    margin-bottom: 50px;
+}
+
+.infoemp {
+    width: 97.3%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    margin-left: 17px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(226, 226, 226);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+.down_part{
+    display: flex;
+    flex-direction: column;
+    width: 43%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.chart{
+    font-family: 'Poppins';
+    color: #ffffff;
+    background-color: #1D1D20;
+    width: 95%;
+    height: 62%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart h3{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.chart_bar2{
+    height: 95%;
+    width: 77%;
+}
+
+.bar{
+    width: 100%;
+    height: 100%;
+}
+
+.taxes{
+    display: flex;
+    height: 95%;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+#h4btn{
+    margin-bottom: 32px;
+}
+
+.taxes .boxes_taxes{
+    background-color: #1D1D20;
+    width: 100%;
+    height: 46%;
+    border-radius: 15px;
+}
+
+.boxes_taxes h3{
+    font-family: 'Poppins';
+    color: #ffffff;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.Info_disc{
+    display: flex;
+    flex-direction: column;
+    width: 88%;
+}
+
+.boxes_taxes2{
+    background-color: #1D1D20;
+    height: 91%;
+    font-family: 'Poppins';
+    color: #ffffff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    margin-right: 29px;
+    width: 437px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boxes_taxes2 h3{
+    font-family: 'Poppins';
+    color: #ffffff;
+    width: 95%;
+}
+
+.info_temp{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Poppins';
+    color: #ffffff;
+    width: 100%;
+    height: 49%;
+    align-items: center;
+    justify-content: center;
+}
+
+.info_temp button{
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 55px;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.tempo_fora{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    width: 282px;
+}
+
+#date{
+    font-size: 18px;
+}
+
+#time{
+    font-size: 34px;
+}
+
+form .page .btns button.prev {
+    font-size: 17px;
+    position: relative;
+
+  }
+
+  form .page .btns button.next {
+    position: relative;
+    left: 40vh;
+  }
+
+  .barra {
+    width: 85%;
+    height: 26px;
+    flex-shrink: 0;
+    position: sticky;
+    margin-top: 1%;
+}
+
+.barra .amarela {
+    width: 60%;
+    background-color: #FFE500;
+    position: absolute;
+}
+
+.chart_bar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.barra .cinza {
+    width: 52%;
+    background-color: #282C35;
+    position: absolute;
+    margin-left: 50%;
+}
+.part_info_bar{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.info_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 86%;
+    font-family: 'Poppins';
+    color: #ffffff;
+}
