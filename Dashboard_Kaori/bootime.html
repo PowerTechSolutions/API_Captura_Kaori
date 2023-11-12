@@ -7,18 +7,19 @@
 
 scale=1.0">
     <title>Dashboard - ADM</title>
-    <link rel="stylesheet" href="../css/bootime.css">
+    <link rel="stylesheet" href="css/bootime.css">
     <!-- <link rel="stylesheet" href="../css/navbar.css"> -->
-    <link rel="stylesheet" href="../css/dropdown.css">
-    <link rel="stylesheet" href="../css/chat.css">
-    <script src="../js/direcoes.js"></script>
-    <script src="../js/chat.js"></script>
+    <link rel="stylesheet" href="css/dropdown.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <script src="js/direcoes.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../Teste_chatbot/chatbot.css">
+    <link rel="stylesheet" href="Teste_chatbot/chatbot.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="../Teste_chatbot/chatbot.js"></script>
+    <script src="Teste_chatbot/chatbot.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
 
@@ -26,7 +27,7 @@ scale=1.0">
     <div class="dash">
         <div class="navbar_boot">
             <div class="circle_back">
-                <button><img src="../assets/imgs_power/arrow.png" alt=""></button>
+                <button><img src="assets/imgs_power/arrow.png" alt=""></button>
             </div>
 
             <div class="information_user">
@@ -34,116 +35,91 @@ scale=1.0">
                     <span id="nome">Nome Usuário</span>
                     <span id="email">Email@gmail.com</span>
                 </div>
-                <img src="../assets/imgs_power/Telecommuting-pana.png" alt="">
+                <img src="assets/imgs_power/Telecommuting-pana.png" alt="">
             </div>
         </div>
+        <div class="left_part">
+            <div class="upper_part">
 
-        <div class="upper_part">
-            <div class="info_machine">
-                <div class="picture">
-                    <img src="../assets/imgs_power/laptop-screen.png" alt="">
-                    <p>Nome da Máquina</p>
-                </div>
-                <div class="inform">
-                    <span>Código do Disco:</span>
-                    <p>00000</p>
-                    <span>Quantidade de APPs:</span>
-                    <p>00000</p>
-                </div>
-            </div>
-
-            <div class="boxes_inside">
-                <div id="card_employee">
-                    <h2>Status dos funcionários</h2>
-                    <div class="title">
-                        <h3>PID</h3>
-                        <h3>Nome</h3>
-                        <h3>Mem(%)</h3>
-                    </div>
-                    <div class="arrangement">
-                        <div class="infoemp">
-                            <p>001</p>
-                            <p>Armin Holland</p>
-                            <p>07/10/2023</p>
+                <div class="boxes_inside">
+                    <div id="card_employee">
+                        <h2>Apps:</h2>
+                        <div class="title">
+                            <h3>DATA</h3>
+                            <h3>Inicio: Hora</h3>
+                            <h3>Total horas</h3>
                         </div>
-                        <div class="infoemp">
-                            <p>001</p>
-                            <p>Armin Holland</p>
-                            <p>07/10/2023</p>
-                        </div>
-                        <div class="infoemp">
-                            <p>001</p>
-                            <p>Armin Holland</p>
-                            <p>07/10/2023</p>
-                        </div>
-                        <div class="infoemp">
-                            <p>001</p>
-                            <p>Armin Holland</p>
-                            <p>07/10/2023</p>
-                        </div>
-                        <div class="infoemp">
-                            <p>001</p>
-                            <p>Armin Holland</p>
-                            <p>07/10/2023</p>
-                        </div>
-                        <div class="infoemp">
-                            <p>001</p>
-                            <p>Armin Holland</p>
-                            <p>07/10/2023</p>
-                        </div>
-                        <div class="infoemp">
-                            <p>001</p>
-                            <p>Armin Holland</p>
-                            <p>07/10/2023</p>
-                        </div>
-                        <div class="infoemp">
-                            <p>001</p>
-                            <p>Armin Holland</p>
-                            <p>07/10/2023</p>
+                        <div class="arrangement">
+                            <div class="infoemp">
+                                <p>001</p>
+                                <p>Armin Holland</p>
+                                <p>07/10/2023</p>
+                            </div>
+                            <div class="infoemp">
+                                <p>001</p>
+                                <p>Armin Holland</p>
+                                <p>07/10/2023</p>
+                            </div>
+                            <div class="infoemp">
+                                <p>001</p>
+                                <p>Armin Holland</p>
+                                <p>07/10/2023</p>
+                            </div>
+                            <div class="infoemp">
+                                <p>001</p>
+                                <p>Armin Holland</p>
+                                <p>07/10/2023</p>
+                            </div>
+                            <div class="infoemp">
+                                <p>001</p>
+                                <p>Armin Holland</p>
+                                <p>07/10/2023</p>
+                            </div>
+                            <div class="infoemp">
+                                <p>001</p>
+                                <p>Armin Holland</p>
+                                <p>07/10/2023</p>
+                            </div>
+                            <div class="infoemp">
+                                <p>001</p>
+                                <p>Armin Holland</p>
+                                <p>07/10/2023</p>
+                            </div>
+                            <div class="infoemp">
+                                <p>001</p>
+                                <p>Armin Holland</p>
+                                <p>07/10/2023</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="chart">
+                    <div class="chart_bar2"><canvas class="bar" id="myChart"></canvas></div>
+
+                </div>
+
+
             </div>
 
-            <div class="info_machine2">
-                <div id="card_employee2">
-                    <h2>Alertas</h2>
-                    <div class="arrangement2">
-                        <div class="infoemp2">
-                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
-                        </div>
-                        <div class="infoemp2">
-                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
-                        </div>
-                        <div class="infoemp2">
-                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
-                        </div>
-                        <div class="infoemp2">
-                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
-                        </div>
-                        <div class="infoemp2">
-                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
-                        </div>
-                        <div class="infoemp2">
-                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
-                        </div>
-                        <div class="infoemp2">
-                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
-                        </div>
-                        <div class="infoemp2">
-                            <p>CRÍTICO!! Uso do disco 1 chegando á 90%</p>
-                        </div>
+            <div class="down_part">
+
+
+                <div class="info_machine2">
+                    <div class="picture">
+                        <img src="assets/imgs_power/laptop-screen.png" alt="">
+                        <h4>Nome da Maquina</h4>
+                    </div>
+                    <div class="informs">
+                        <h4 id="h4">Qtd Total de Paralização</h4>
+                        <span>9999</span>
+                        <h4>Codigo do Disco</h4>
+                        <span>9999</span>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="down_part">
-            <div class="chart">
-            </div>
-
-            <div class="taxes">
-                <div class="boxes_taxes">
+                <div class="taxes">
+                    <!-- <div class="boxes_taxes">
                     <h3>Tempo de Paralização:</h3>
                     <div class="info_temp">
                         <button class="prev-1 prev">
@@ -154,27 +130,38 @@ scale=1.0">
                                 </div>
                         <button class="firstNext next"> > </button>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="boxes_taxes2">
-                    <div class="part_info_bar">
-                        <div class="info_bar">
-                            <span>Uso de Disco</span>
-                            <span id="porcentage">56%</span>
-                        </div>
-                        <div class="chart_bar">
-                            <div class="barra">
-                                <div class="barra amarela"></div>
-                                <div class="barra cinza"></div>
+                    <div class="boxes_taxes2">
+                        <div class="part_info_bar">
+                            <h3>Tamanho de HD</h3>
+                            <div class="info_bar">
+                                <span>45%</span>
+                                <span id="porcentage">5555/9999</span>
                             </div>
+                            <div class="chart_bar">
+                                <div class="barra">
+                                    <div class="barra amarela"></div>
+                                    <div class="barra cinza"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="Info_disc">
+                            <h4 id="h4">Total Disco(GB): <span>9999</span></h4>
+                            <h4>Free Disco(GB): <span>9999</span></h4>
+                            <h4 id="h4btn">Used Disco(GB): <span>9999</span></h4>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
     <div class="boxes">
-        <button id="message" onclick="literate()"><img src="../assets/imgs_power/message_icon.ico" alt=""></button>
+        <button id="message" onclick="literate()"><img src="assets/imgs_power/message_icon.ico" alt=""></button>
         <div class="dropdown_lit" id="lit_dropdown">
             <div id="main">
                 <h2>Chat de Ajuda</h2>
@@ -196,80 +183,53 @@ scale=1.0">
     </div>
     </div>
     </div>
-    <script src="../Teste_chatbot/chatbot.js"></script>
+    <script src="Teste_chatbot/chatbot.js"></script>
 </body>
 
 </html>
 
 <script>
-    //global
-    menu_user.src = '../assets/imgs_power/menu_baixo.png'
-    var botao_icon2 = "../assets/imgs_power/menu_alto.png"
-    var contador = 0;
+
+    const ctx = document.getElementById('myChart');
+
+    // const labels = Utils.months({count: 7});
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                axis: 'y',
+                label: 'Top 10 Aplicações que tem maior uso de HD / Tempo de maior paralização',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                fill: false,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(201, 203, 207, 0.2)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+        }
+    });
 
     window.onload = buscarDiscos(1);
-
-    function troca_menu() {
-        contador += 1
-
-        if (contador > 0) {
-            if (contador == 1) {
-                menu_user.src = botao_icon2
-                funcoes.innerHTML = `<span class="sair">Sair</span>`
-
-            } else {
-                funcoes.innerHTML = ' ';
-                contador = 0
-                menu_user.src = '../assets/imgs_power/menu_baixo.png'
-            }
-        }
-    }
-
-    function troca2() {
-        contador += 1
-
-        if (contador > 0) {
-            if (contador == 1) {
-                menu_cpu.src = '../assets/imgs_power/menu_baixo.png'
-                menu_ram.style.display = ''
-                menu_ram.style = "border-top: 1px solid #FFE500;"
-                menu_ram.innerHTML = `<span onclick= "trocar_chart()">Uso de Ram</span>`
-
-            } else {
-                menu_ram.style = ''
-                menu_ram.innerHTML = ''
-                contador = 0
-                menu_cpu.src = '../assets/imgs_power/menu_alto.png'
-            }
-        }
-    }
-
-    function trocar_chart() {
-        //esse alert é um teste para ver se funcionou criar a function pelo script
-        alert('agora o gráfico será de uso de ram ')
-    }
-
-    function exibirgraph(valor) {
-
-        var grafico_RAM = document.getElementById("myChart_RAM")
-        var grafico_CPU = document.getElementById("myChart_CPU")
-
-        if (valor == 1) {
-
-            obterDadosGrafico_RAM(1)
-
-            grafico_CPU.style.display = "none";
-            grafico_RAM.style.display = "block";
-
-        } else if (valor == 2) {
-
-            obterDadosGrafico_CPU(1)
-
-            grafico_RAM.style.display = "none";
-            grafico_CPU.style.display = "block";
-
-        }
-    }
 
     function buscarDiscos(FKMAQUINA) {
 
