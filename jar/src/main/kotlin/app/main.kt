@@ -11,7 +11,6 @@ import UsuarioRepositorio
 import java.time.LocalDateTime
 import java.time.LocalTime
 import java.util.*
-import ConexaoSqlServer
 
 open class Main {
     companion object {

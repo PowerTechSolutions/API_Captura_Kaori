@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd21a607-217c-411d-addd-37765a9b20e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ConexaoSqlServer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CodigoPythonConst.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CodigoPythonConst.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Captura.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CapturaProcessos.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/CodigoPythonPeri.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CodigoPythonPeri.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Conexao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Conexao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/MaquinasRepositorio.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/MaquinasRepositorio.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Monitoramento_RAWRepositorio.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Monitoramento_RAWRepositorio.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ServicoCadastradoRepositorio.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ServicoCadastradoRepositorio.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ServicoMonitoradoRepositorio.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ServicoMonitoradoRepositorio.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/UsuarioRepositorio.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/UsuarioRepositorio.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/app/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/app/main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

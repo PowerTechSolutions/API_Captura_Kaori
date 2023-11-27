@@ -5,7 +5,7 @@ object CodigoPythonPeri {
     fun execpython(servicos: MutableList<ServicosMonitorados>) {
 
         val servicoCadastradoRepositorio = ServicoCadastradoRepositorio()
-        servicoCadastradoRepositorio.iniciar()
+        servicoCadastradoRepositorio.iniciarSql()
 
         var componenteDISCO = 0
 
