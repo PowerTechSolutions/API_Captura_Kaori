@@ -24,8 +24,26 @@ object CodigoPythonPeri {
 import time
 import psutil
 import mysql.connector
+import pyodbc
 
 disco = psutil.disk_usage('/')
+
+try:
+    conn = pyodbc.connect(
+        'Driver=ODBC Driver 17 for SQL Server;'
+        'Server=ec2-34-194-127-191.compute-1.amazonaws.com;'
+        'Database=PowerTechSolutions;'
+        'UID=sa;'
+        'PWD=myLOVEisthe0506'
+    )
+    cursor = conn.cursor()
+    sql_querryDISCO = f'INSERT INTO Monitoramento_RAW (Total, Free, Uso, Porcentagem_Uso, FKComponente_Monitorado) VALUES ({disco.total},{disco.free},{disco.used},{disco.percent},$componenteDISCO)'
+    cursor.execute(sql_querryDISCO)
+    conn.commit()
+    
+finally:
+    cursor.close()
+    conn.close()
 
 try:
     mydb = mysql.connector.connect(host='localhost', user='root', password='@Icecubes123', database='PowerTechSolutions')

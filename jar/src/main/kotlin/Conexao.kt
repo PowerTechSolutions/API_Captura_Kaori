@@ -2,7 +2,7 @@
 import org.apache.commons.dbcp2.BasicDataSource
 import org.springframework.jdbc.core.JdbcTemplate
 
-object Conexao {
+object ConexaoMySql {
 
         var jdbcTemplate: JdbcTemplate? = null
             get() {
@@ -25,7 +25,7 @@ object Conexao {
 
             }
 
-    fun iniciar(){
+    fun iniciarSql(){
         jdbcTemplate = jdbcTemplate!!
     }
 

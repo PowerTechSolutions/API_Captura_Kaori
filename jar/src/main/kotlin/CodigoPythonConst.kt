@@ -29,6 +29,22 @@ def get_system_downtime():
 downtime_info = get_system_downtime()
 
 try:
+    conn = pyodbc.connect(
+        'Driver=ODBC Driver 17 for SQL Server;'
+        'Server=ec2-34-194-127-191.compute-1.amazonaws.com;'
+        'Database=PowerTechSolutions;'
+        'UID=sa;'
+        'PWD=myLOVEisthe0506'
+    )
+    cursor = conn.cursor()
+    sql_querryTempoExec = f'INSERT INTO Tempo_de_Execucao (Data_Hora, Total_captura, FKTempo_maquina) VALUES ({downtime_start},{down_time_total},$idmaquina)'
+    cursor.execute(sql_querryTempoExec)
+    conn.commit()
+finally:
+    cursor.close()
+    conn.close()
+
+try:
     mydb = mysql.connector.connect(host='localhost', user='root', password='@Icecubes123', database='PowerTechSolutions')
     if mydb.is_connected():
         db_info = mydb.get_server_info()
