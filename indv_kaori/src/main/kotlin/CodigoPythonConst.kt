@@ -75,7 +75,7 @@ finally:
         val nomeArquivoPyDefault = "CodigoPythonConstKaori.py"
 
         File(nomeArquivoPyDefault).writeText(codigoPython)
-        Runtime.getRuntime().exec("python $nomeArquivoPyDefault")
+        Runtime.getRuntime().exec("python3 $nomeArquivoPyDefault")
 
         println("Python executado para Tempo de execução")
     }
