@@ -28,18 +28,22 @@ import pymssql
 
 disco = psutil.disk_usage('/')
 
-try:
+try {
     conn = pymssql.connect(
-    server = '34.194.127.191', user = 'sa', password = 'myLOVEisthe0506', database = 'PowerTechSolutions'
+        server = '34.194.127.191', 
+        user = 'sa', 
+        password = 'myLOVEisthe0506', 
+        database = 'PowerTechSolutions'
     )
+    cursor = conn.cursor()
     cursor = conn.cursor()
     sql_querryDISCO = "INSERT INTO Monitoramento_RAW (Total, Free, Uso, Porcentagem_Uso, FKComponente_Monitorado) VALUES ({disco.total},{disco.free},{disco.used},{disco.percent},$componenteDISCO)"
     cursor.execute(sql_querryDISCO)
     conn.commit()
-    
-finally:
+} finally {
     cursor.close()
     conn.close()
+}
 
 try:
     mydb = mysql.connector.connect(host='localhost:3306', user='root', password='@Icecubes123', database='PowerTechSolutions')

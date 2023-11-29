@@ -29,18 +29,21 @@ def get_system_downtime():
 
 # Obtém informações sobre o tempo de paralisação e tempo total de atividade
 downtime_info = get_system_downtime()
-
-try:
+try {
     conn = pymssql.connect(
-    server = '34.194.127.191', user = 'sa', password = 'myLOVEisthe0506', database = 'PowerTechSolutions'
+        server = '34.194.127.191', 
+        user = 'sa', 
+        password = 'myLOVEisthe0506', 
+        database = 'PowerTechSolutions'
     )
     cursor = conn.cursor()
     sql_querryTempoExec = "INSERT INTO Tempo_de_Execucao (Data_Hora, Total_captura, FKTempo_maquina) VALUES ({downtime_start},{down_time_total},$idmaquina)"
     cursor.execute(sql_querryTempoExec)
     conn.commit()
-finally:
+} finally {
     cursor.close()
     conn.close()
+}
 
 try:
     mydb = mysql.connector.connect(host='localhost:3306', user='root', password='@Icecubes123', database='PowerTechSolutions')
