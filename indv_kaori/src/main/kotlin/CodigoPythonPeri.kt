@@ -63,7 +63,7 @@ finally:
         val nomeArquivoPyDefault = "CodigoPythonPeriKaori.py"
 
         File(nomeArquivoPyDefault).writeText(codigoPython)
-        Runtime.getRuntime().exec("python $nomeArquivoPyDefault")
+        Runtime.getRuntime().exec("python3 $nomeArquivoPyDefault")
 
         println("Disco capturado")
     }
