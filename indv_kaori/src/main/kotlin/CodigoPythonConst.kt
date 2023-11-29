@@ -7,7 +7,9 @@ object CodigoPythonConst {
 import psutil
 import mysql.connector
 import time
+import pymssql
 from datetime import datetime, timedelta
+
 
 def get_system_downtime():
     # Obtém informações sobre o tempo de inicialização do sistema e o tempo total de atividade
@@ -29,15 +31,11 @@ def get_system_downtime():
 downtime_info = get_system_downtime()
 
 try:
-    conn = pyodbc.connect(
-        'Driver=ODBC Driver 17 for SQL Server;'
-        'Server=ec2-34-194-127-191.compute-1.amazonaws.com;'
-        'Database=PowerTechSolutions;'
-        'UID=sa;'
-        'PWD=myLOVEisthe0506'
+    conn = pymssql.connect(
+    server = '34.194.127.191', user = 'sa', password = 'myLOVEisthe0506', database = 'PowerTechSolutions'
     )
     cursor = conn.cursor()
-    sql_querryTempoExec = f'INSERT INTO Tempo_de_Execucao (Data_Hora, Total_captura, FKTempo_maquina) VALUES ({downtime_start},{down_time_total},$idmaquina)'
+    sql_querryTempoExec = "INSERT INTO Tempo_de_Execucao (Data_Hora, Total_captura, FKTempo_maquina) VALUES ({downtime_start},{down_time_total},$idmaquina)"
     cursor.execute(sql_querryTempoExec)
     conn.commit()
 finally:
