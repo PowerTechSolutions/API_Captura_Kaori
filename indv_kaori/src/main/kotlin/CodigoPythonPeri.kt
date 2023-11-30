@@ -48,7 +48,7 @@ try:
     mydb = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='@Icecubes123',
+        password='urubu100',
         database='PowerTechSolutions'
     )
     mycursor = mydb.cursor()
