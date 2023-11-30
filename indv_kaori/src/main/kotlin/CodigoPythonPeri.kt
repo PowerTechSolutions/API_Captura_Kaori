@@ -38,7 +38,7 @@ try:
 
     cursor_mssql.execute(
         "INSERT INTO Monitoramento_RAW (Total, Free, Uso, Porcentagem, FKComponente_Monitorado) VALUES (%s, %s, %s, %s, %s)",
-        (disco.total, disco.free, disco.used, disco.percent, 1)  # Replace 1 with the actual value for FKComponente_Monitorado
+        (disco.total, disco.free, disco.used, disco.percent, ${componenteDISCO})  # Replace 1 with the actual value for FKComponente_Monitorado
     )
     conn_mssql.commit()
 
@@ -51,7 +51,7 @@ finally:
         val nomeArquivoPyDefault = "CodigoPythonPeriKaori.py"
 
         File(nomeArquivoPyDefault).writeText(codigoPython)
-        Runtime.getRuntime().exec("python3 $nomeArquivoPyDefault")
+        Runtime.getRuntime().exec("py $nomeArquivoPyDefault")
 
         println("Disco capturado")
     }

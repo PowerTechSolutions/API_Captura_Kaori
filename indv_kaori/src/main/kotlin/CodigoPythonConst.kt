@@ -55,7 +55,7 @@ try:
         # MSSQL Insert
         cursor_mssql.execute(
             "INSERT INTO Tempo_de_Execucao (Data_Hora, Total_captura, FKMaquina) VALUES (%s, %s, %s)",
-            (downtime_start, formatted_down_time_total, 1)  # Assuming 1 is the ID of the machine
+            (downtime_start, formatted_down_time_total, ${idmaquina})  # Assuming 1 is the ID of the machine
         )
         conn_mssql.commit()
 
@@ -70,7 +70,7 @@ finally:
         val nomeArquivoPyDefault = "CodigoPythonConstKaori.py"
 
         File(nomeArquivoPyDefault).writeText(codigoPython)
-        Runtime.getRuntime().exec("python3 $nomeArquivoPyDefault")
+        Runtime.getRuntime().exec("py $nomeArquivoPyDefault")
 
         println("Python executado para Tempo de execução")
     }
