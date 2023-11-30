@@ -1,7 +1,8 @@
 
 import psutil
-import mysql.connector
 import time
+import mysql.connector
+import pymssql
 from datetime import datetime, timedelta
 
 def get_system_downtime():
@@ -20,27 +21,28 @@ def get_system_downtime():
     else:
         return downtime_start, downtime_duration
 
-# Obtém informações sobre o tempo de paralisação e tempo total de atividade
-downtime_info = get_system_downtime()
-
 try:
-    conn = pyodbc.connect(
-        'Driver=ODBC Driver 17 for SQL Server;'
-        'Server=ec2-34-194-127-191.compute-1.amazonaws.com;'
-        'Database=PowerTechSolutions;'
-        'UID=sa;'
-        'PWD=myLOVEisthe0506'
+    # MSSQL Connection
+    conn_mssql = pymssql.connect(
+        server='34.194.127.191',
+        user='sa',
+        password='myLOVEisthe0506',
+        database='PowerTechSolutions'
     )
-    cursor = conn.cursor()
-    sql_querryTempoExec = f'INSERT INTO Tempo_de_Execucao (Data_Hora, Total_captura, FKTempo_maquina) VALUES ({downtime_start},{down_time_total},1)'
-    cursor.execute(sql_querryTempoExec)
-    conn.commit()
-finally:
-    cursor.close()
-    conn.close()
+    cursor_mssql = conn_mssql.cursor()
 
-try:
-    mydb = mysql.connector.connect(host='localhost:3306', user='root', password='@Icecubes123', database='PowerTechSolutions')
+    # MySQL Connection
+    mydb = mysql.connector.connect(
+        host='localhost',
+        user='root',
+        password='@Icecubes123',
+        database='PowerTechSolutions'
+    )
+    mycursor = mydb.cursor()
+
+    # Call the function to get downtime_start and downtime_duration
+    downtime_info = get_system_downtime()
+
     if mydb.is_connected():
         db_info = mydb.get_server_info()
         mycursor = mydb.cursor()
@@ -53,15 +55,34 @@ try:
             print(f"Duração da Última Paralisação: {downtime_duration}")
             print(f"Duração da Última Paralisação Menos 3 Minutos: {down_time_total}")
 
+            hours, remainder = divmod(down_time_total.seconds, 3600)
+            minutes, seconds = divmod(remainder, 60)
+            formatted_down_time_total = "{:02}:{:02}:{:02}".format(hours, minutes, seconds)
+
+            print(f"Duração da Última Paralisação Menos 3 Minutos: {formatted_down_time_total}")
+
             mycursor.execute('''
                 INSERT INTO Tempo_de_Execucao (Data_Hora, Total_captura, FKTempo_maquina)
-                VALUES (%s, %s, 1)
-                ''', (downtime_start, down_time_total))
+                VALUES (%s, %s, %s)
+                ''', (downtime_start, formatted_down_time_total, ${idmaquina}))
 
             mydb.commit()
+
+            # MSSQL Insert
+            cursor_mssql.execute(
+                "INSERT INTO Tempo_de_Execucao (Data_Hora, Total_captura, FKMaquina) VALUES (%s, %s, %s)",
+                (downtime_start, formatted_down_time_total, ${idmaquina})
+            )
+            conn_mssql.commit()
+
         else:
             print("A máquina está ligada há mais de 3 minutos ou está em execução.")
+
 finally:
+    cursor_mssql.close()
+    conn_mssql.close()
+
     if mydb.is_connected():
         mycursor.close()
         mydb.close()
+

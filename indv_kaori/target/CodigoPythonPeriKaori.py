@@ -1,36 +1,42 @@
+
 import time
 import psutil
 import mysql.connector
-import pyodbc
+import pymssql
 
 disco = psutil.disk_usage('/')
 
 try:
-    conn = pyodbc.connect(
-        'Driver=ODBC Driver 17 for SQL Server;'
-        'Server=ec2-34-194-127-191.compute-1.amazonaws.com;'
-        'Database=PowerTechSolutions;'
-        'UID=sa;'
-        'PWD=myLOVEisthe0506'
+    # MSSQL Connection
+    conn_mssql = pymssql.connect(
+        server='34.194.127.191',
+        user='sa',
+        password='myLOVEisthe0506',
+        database='PowerTechSolutions'
     )
-    cursor = conn.cursor()
-    sql_querryDISCO = f'INSERT INTO Monitoramento_RAW (Total, Free, Uso, Porcentagem_Uso, FKComponente_Monitorado) VALUES ({disco.total},{disco.free},{disco.used},{disco.percent},3)'
-    cursor.execute(sql_querryDISCO)
-    conn.commit()
-    
-finally:
-    cursor.close()
-    conn.close()
+    cursor_mssql = conn_mssql.cursor()
 
-try:
-    mydb = mysql.connector.connect(host='localhost:3306', user='root', password='@Icecubes123', database='PowerTechSolutions')
+    cursor_mssql.execute(
+        "INSERT INTO Monitoramento_RAW (Total, Free, Uso, Porcentagem, FKComponente_Monitorado) VALUES (%s, %s, %s, %s, %s)",
+        (disco.total, disco.free, disco.used, disco.percent, ${componenteDISCO})  # Replace 1 with the actual value for FKComponente_Monitorado
+    )
+    conn_mssql.commit()
+
+    # MySQL Connection
+    mydb = mysql.connector.connect(
+        host='localhost',
+        user='root',
+        password='@Icecubes123',
+        database='PowerTechSolutions'
+    )
+    mycursor = mydb.cursor()
+
     if mydb.is_connected():
-        db_info = mydb.get_server_info()
-        mycursor = mydb.cursor()
-        sql_querryDISCO = 'INSERT INTO Monitoramento_RAW VALUES (NULL, CURRENT_TIMESTAMP(), %s, %s, %s, %s, 3)'
-        valDISCO = [disco.total, disco.used, disco.free, disco.percent]
+        sql_querryDISCO = 'INSERT INTO Monitoramento_RAW (Total, Free, Uso, Porcentagem, FKComponente_Monitorado) VALUES ( %s, %s, %s, %s, %s)'
+        valDISCO = [disco.total, disco.used, disco.free, disco.percent, ${componenteDISCO}]  # Replace 1 with the actual value for FKComponente_Monitorado
         mycursor.execute(sql_querryDISCO, valDISCO)
         mydb.commit()
+
 finally:
     if mydb.is_connected():
         mycursor.close()
