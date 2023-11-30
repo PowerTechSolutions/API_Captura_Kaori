@@ -63,14 +63,14 @@ try:
             mycursor.execute('''
                 INSERT INTO Tempo_de_Execucao (Data_Hora, Total_captura, FKTempo_maquina)
                 VALUES (%s, %s, %s)
-                ''', (downtime_start, formatted_down_time_total, ${idmaquina}))
+                ''', (downtime_start, formatted_down_time_total, $idmaquina))
 
             mydb.commit()
 
             # MSSQL Insert
             cursor_mssql.execute(
                 "INSERT INTO Tempo_de_Execucao (Data_Hora, Total_captura, FKMaquina) VALUES (%s, %s, %s)",
-                (downtime_start, formatted_down_time_total, ${idmaquina})
+                (downtime_start, formatted_down_time_total, $idmaquina)
             )
             conn_mssql.commit()
 
