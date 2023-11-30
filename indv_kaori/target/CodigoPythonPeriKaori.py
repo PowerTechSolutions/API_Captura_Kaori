@@ -18,7 +18,7 @@ try:
 
     cursor_mssql.execute(
         "INSERT INTO Monitoramento_RAW (Total, Free, Uso, Porcentagem, FKComponente_Monitorado) VALUES (%s, %s, %s, %s, %s)",
-        (disco.total, disco.free, disco.used, disco.percent, ${componenteDISCO})  # Replace 1 with the actual value for FKComponente_Monitorado
+        (disco.total, disco.free, disco.used, disco.percent, 3)  # Replace 1 with the actual value for FKComponente_Monitorado
     )
     conn_mssql.commit()
 
@@ -33,7 +33,7 @@ try:
 
     if mydb.is_connected():
         sql_querryDISCO = 'INSERT INTO Monitoramento_RAW (Total, Free, Uso, Porcentagem, FKComponente_Monitorado) VALUES ( %s, %s, %s, %s, %s)'
-        valDISCO = [disco.total, disco.used, disco.free, disco.percent, ${componenteDISCO}]  # Replace 1 with the actual value for FKComponente_Monitorado
+        valDISCO = [disco.total, disco.used, disco.free, disco.percent, 3]  # Replace 1 with the actual value for FKComponente_Monitorado
         mycursor.execute(sql_querryDISCO, valDISCO)
         mydb.commit()
 
