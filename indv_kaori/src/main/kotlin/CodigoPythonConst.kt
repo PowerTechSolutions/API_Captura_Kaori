@@ -20,8 +20,8 @@ def get_system_downtime():
     downtime_end = datetime.fromtimestamp(current_time)
     downtime_duration = downtime_end - downtime_start
 
-    # Verifica se a máquina está ligada há menos de 3 minutos
-    if downtime_duration.total_seconds() > 180:  # 180 segundos = 3 minutos
+    # Verifica se a máquina está ligada há menos de 8 minutos
+    if downtime_duration.total_seconds() > 480:  # 480 segundos = 8 minutos
         return None
     else:
         return downtime_start, downtime_duration
@@ -58,7 +58,7 @@ try:
             down_time_total = downtime_duration - timedelta(minutes=3)
             print(f"Data e Hora de Início da Última Paralisação: {downtime_start}")
             print(f"Duração da Última Paralisação: {downtime_duration}")
-            print(f"Duração da Última Paralisação Menos 3 Minutos: {down_time_total}")
+            print(f"Duração da Última Paralisação Menos 8 Minutos: {down_time_total}")
 
             hours, remainder = divmod(down_time_total.seconds, 3600)
             minutes, seconds = divmod(remainder, 60)
@@ -81,7 +81,7 @@ try:
             conn_mssql.commit()
 
         else:
-            print("A máquina está ligada há mais de 3 minutos ou está em execução.")
+            print("A máquina está ligada há mais de 8 minutos ou está em execução.")
 
 finally:
     cursor_mssql.close()

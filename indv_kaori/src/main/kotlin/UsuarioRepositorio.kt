@@ -9,10 +9,10 @@ class UsuarioRepositorio {
         jdbcTemplate = ConexaoSqlServer.jdbcTemplate!!
     }
 
-    fun autenticar(cpf:String):Boolean{
+    fun autenticar(senha:String):Boolean{
 
         var usuario = jdbcTemplate.queryForObject(
-            "SELECT * FROM Usuario_Dashboard WHERE Cpf = $cpf",
+            "SELECT * FROM Usuario_Dashboard WHERE Senha = $senha",
             BeanPropertyRowMapper(Usuario::class.java)
         )
 
@@ -24,10 +24,10 @@ class UsuarioRepositorio {
 
     }
 
-    fun resgatarinfo(cpf:String):Usuario{
+    fun resgatarinfo(senha:String):Usuario{
 
         var usuario = jdbcTemplate.queryForObject(
-            "SELECT * FROM Usuario_Dashboard WHERE Cpf = $cpf",
+            "SELECT * FROM Usuario_Dashboard WHERE Senha = $senha",
             BeanPropertyRowMapper(Usuario::class.java)
         )
 
