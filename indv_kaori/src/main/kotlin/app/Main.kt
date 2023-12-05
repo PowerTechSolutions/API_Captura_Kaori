@@ -33,12 +33,15 @@ open class Main {
 
             println("Bem vindo a PowerTech Por favor realize o login para utilizar nosso sistema")
 
+            println("Insira seu Email: ")
+            var email:String = sn.next()
+
             println("Insira sua Senha: ")
             var Senha:String = sn.next()
 
-            if (usuario_repositorio.autenticar(Senha)){
+            if (usuario_repositorio.autenticar(email,Senha)){
 
-                var funcionario:Usuario = usuario_repositorio.resgatarinfo(Senha)
+                var funcionario:Usuario = usuario_repositorio.resgatarinfo(email,Senha)
 
                 var maquinas:String = maquina_repositorio.pegarMaquinas(funcionario.IDUsuario)
                 println("Qual a numeração da maquina e está que está instalando o serviço? $maquinas")
