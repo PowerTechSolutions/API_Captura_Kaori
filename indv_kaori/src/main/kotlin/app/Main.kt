@@ -86,11 +86,7 @@ open class Main {
             var repositorio = Monitoramento_RAWRepositorio()
             repositorio.iniciar()
 
-            var dataDisco = LocalDateTime.now()
 
-            var verificacaoDiaria:Int = 0
-            var verificacaoSemanal:Int = 0
-            var dia_semana:Int = 1
 
             var verificacaoDisco = false
 
@@ -99,31 +95,13 @@ open class Main {
             while(true){
 
                 if (capturaDISCO == 1){
-                    if(verificacaoSemanal == 0){
                         if (verificacaoDisco){
-                            dataDisco = repositorio.buscarData(maquinaEscolhida,"DISCO")
-                            if (dataDisco.dayOfWeek == dataAtual.dayOfWeek){
                                 CodigoPythonPeri.execpython(servicos)
-                            }
-                        }else{
+                        }else {
                             CodigoPythonPeri.execpython(servicos)
-                            verificacaoDisco = true
                         }
-                        verificacaoSemanal += 1
-                    }
                 }
 
-                var dataAtual = LocalTime.now()
-
-                if (dataAtual.equals("23:59:59")){
-                    verificacaoDiaria = 0
-                    dia_semana += 1
-                }
-
-                if (dia_semana == 7){
-                    verificacaoSemanal = 0
-                    dia_semana = 1
-                }
 
                 CodigoPythonConst.execpythonKaori(maquinaEscolhida)
 
